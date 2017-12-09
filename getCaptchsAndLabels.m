@@ -12,17 +12,19 @@ function [captchasImages, labels] = getCaptchsAndLabels()
     
     %% Acquire paths and get label map
     image_paths = dir(strcat(IMAGE_DIR, '*.jpg'));
-    [~, hash_label_map] = xlsread(LABEL_MAP);
+    hash_label_file = fopen(LABEL_MAP);
+    hash_label_map = textscan(hash_label_file, '%q %q', 'Delimiter', ',');    
+    fclose(hash_label_file);
     
     %% Output initialization
-    captchasImages = cell(length(hash_label_map), 1);
-    labels = cell(length(hash_label_map), 1);
+    captchasImages = cell(length(hash_label_map{1}), 1);
+    labels = cell(length(hash_label_map{1}), 1);
     
     %% Read each image and get label and add to output cell arrays
     for i = 1 : length(image_paths)
        img_name = image_paths(i).name; 
        captchasImages{i} = imread(strcat(IMAGE_DIR,img_name));
-       idx = strcmp(hash_label_map(:,1), img_name);
-       labels{i} = hash_label_map{idx, 2};
+       idx = strcmp(hash_label_map{1}, img_name);
+       labels{i} = hash_label_map{2}{idx};
     end
 end
