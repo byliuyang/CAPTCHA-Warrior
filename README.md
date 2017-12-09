@@ -20,6 +20,18 @@ When contributing to this repository, please first discuss the change you wish t
 
 4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
 
+## Dataset Generation
+- Dependencies
+-- Pillow
+-- Flask
+
+- Execution
+1. Open DatasetGenerator.py
+2. Modify the DATA_SIZE parameter to desired number of images
+3. Create images directory
+4. Run DatasetGenerator.py
+5. The images directory will contain CAPTCHA images and hash_to_label.csv contains the ground truth label of each image.
+
 ## Authors
 
 - **Shaoju Wu** - *Initial work* - [wushaoju](https://github.com/wushaoju)
