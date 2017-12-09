@@ -3,6 +3,7 @@ function characterImages = extractCharacters(captchaImage)
 
     % 1. Remove the noises from the image
     % 2. Remove the background of the image
+    removeBackgroundColor(captchaImage);
     % 3. Remove the random lines from the image
     % 4. Check whether the image has enough characters
     %       if no, return None
