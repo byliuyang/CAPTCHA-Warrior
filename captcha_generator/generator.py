@@ -159,9 +159,9 @@ def main():
         image.save(os.path.join('images', name + '.jpg'))
 
     with open('hash_to_label.csv', 'w') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, quotechar="'")
         for i in names:
-            writer.writerow([i, names[i]])
+            writer.writerow(['"' + str(i) + '"', '"' + str(names[i]) + '"'])
 
 
 if __name__ == "__main__":
