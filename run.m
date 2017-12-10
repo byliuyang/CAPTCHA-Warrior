@@ -9,7 +9,7 @@ clc;
 [trainImages, trainLabels, testImages, testLabels] = getDataSet(images, labels, 0.8);
 
 %% Train Model
-chars = extractCharacters(trainImages{1});
+[char_imgs, char_lbls] = splitCharacters(trainImages{1}, trainLabels{1});
 
 %% Test Model
 

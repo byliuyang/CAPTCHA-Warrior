@@ -2,7 +2,7 @@ function characterImages = extractCharacters(captchaImage)
     % Extract character images from the captcha image
     
     %% Parameter configuration
-    DEBUG = 1;
+    DEBUG = 0;
     MIN_AREA = 20;
     CHAR_IMG_SIZE = 50;
     characterImages = cell(4, 1);
