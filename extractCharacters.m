@@ -58,8 +58,10 @@ function characterImages = extractCharacters(captchaImage)
             blob_im = blob_im(:, 1:50);
         end
         characterImages{blob_num} = blob_im;
-        subplot(2, 4, plot_num);
-        imshow(blob_im);
+        if DEBUG
+            subplot(2, 4, plot_num);
+            imshow(blob_im);
+        end
         blob_num = blob_num + 1;
         plot_num = plot_num + 1;
     end
