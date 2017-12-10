@@ -7,8 +7,8 @@ function [captchasImages, labels] = getCaptchsAndLabels()
     %   labels Cell array of the ground truth label of corresponding image
     
     %% Path configuration
-    IMAGE_DIR = './captcha_generator/images/';
-    LABEL_MAP = './captcha_generator/hash_to_label.csv';
+    IMAGE_DIR = '../captcha_generator/images/';
+    LABEL_MAP = '../captcha_generator/hash_to_label.csv';
     
     %% Acquire paths and get label map
     image_paths = dir(strcat(IMAGE_DIR, '*.jpg'));
